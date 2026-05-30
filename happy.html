@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Mode</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="happy-container">
+
+        <!-- QUOTE SECTION -->
+
+        <div class="quote-card">
+
+            <h1 id="happy-quote">
+                “Happiness grows when shared.”
+            </h1>
+
+        </div>
+
+        <!-- TRANSITION TEXT -->
+
+        <div class="transition-text">
+
+            <p>
+                You seem cheerful today 🌞
+                <br>
+                Here are some activities to help you enjoy this moment even more.
+            </p>
+
+        </div>
+
+        <!-- ACTIVITY CARDS -->
+
+        <div class="activity-grid">
+
+            <!-- CARD 1 -->
+
+            <a href="happy_playlist.html" class="activity-card">
+
+                <div class="activity-icon">🎵</div>
+
+                <h2>Vibe Playlist</h2>
+
+                <p>
+                    Feel-good music & happy vibes
+                </p>
+
+            </a>
+
+            <!-- CARD 2 -->
+
+            <a href="cherish.html" class="activity-card">
+
+                <div class="activity-icon">📸</div>
+
+                <h2>Cherish the Moment</h2>
+
+                <p>
+                    Save today’s beautiful memories
+                </p>
+
+            </a>
+            <!-- CARD 5 -->
+
+            <a href="spinner.html" class="activity-card">
+
+                <div class="activity-icon">🎡</div>
+
+                <h2>Celebration Spinner</h2>
+
+                <p>
+                    Spin fun random happy challenges
+                </p>
+
+            </a>
+
+        </div>
+         <a href="confirm.html"
+       class="back-button">
+
+       ← Back
+
+    </a>
+
+    </div>
+
+    <!-- RANDOM QUOTES -->
+
+    <script>
+
+        const happyQuotes = [
+
+            "Happiness grows when shared.",
+
+            "Enjoy this beautiful little moment.",
+
+            "You deserve this happiness.",
+
+            "Smile more, worry less.",
+
+            "Today feels brighter because of you."
+
+        ];
+
+        const randomQuote =
+            happyQuotes[
+                Math.floor(Math.random() * happyQuotes.length)
+            ];
+
+        document.getElementById("happy-quote").innerHTML =
+            `"${randomQuote}"`;
+
+    </script>
+
+</body>
+</html>
