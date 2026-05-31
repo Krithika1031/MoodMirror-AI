@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Results</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="result-container">
+
+        <h1>AI Mood Analysis</h1>
+
+        <p class="result-subtitle">
+            Top emotions detected from your facial expression
+        </p>
+        <p class="result-note">
+These percentages are AI predictions based on your facial expression and may vary depending on lighting, camera quality, and facial posture.
+</p>
+
+        <!-- HAPPY -->
+
+        <div class="emotion-card">
+
+            <div class="emotion-header">
+                <h2>😊 Happy</h2>
+                <span class="percent happy-text">0%</span>
+            </div>
+
+            <div class="percentage-bar">
+
+                <div class="percentage happy"></div>
+
+            </div>
+
+        </div>
+
+        <!-- NEUTRAL -->
+
+        <div class="emotion-card">
+
+            <div class="emotion-header">
+                <h2>😐 Neutral</h2>
+                <span class="percent neutral-text">0%</span>
+            </div>
+
+            <div class="percentage-bar">
+
+                <div class="percentage neutral"></div>
+
+            </div>
+
+        </div>
+
+        <!-- SAD -->
+
+        <div class="emotion-card">
+
+            <div class="emotion-header">
+                <h2>😔 Sad</h2>
+                <span class="percent sad-text">0%</span>
+            </div>
+
+            <div class="percentage-bar">
+
+                <div class="percentage sad"></div>
+
+            </div>
+
+        </div>
+
+
+    <script>
+
+const happy = localStorage.getItem("happy") || 0;
+const neutral = localStorage.getItem("neutral") || 0;
+const sad = localStorage.getItem("sad") || 0;
+
+document.querySelector(".happy").style.width = happy + "%";
+document.querySelector(".happy-text").innerHTML =
+    Number(happy).toFixed(1) + "%";
+
+document.querySelector(".neutral").style.width = neutral + "%";
+document.querySelector(".neutral-text").innerHTML =
+    Number(neutral).toFixed(1) + "%";
+
+document.querySelector(".sad").style.width = sad + "%";
+document.querySelector(".sad-text").innerHTML =
+    Number(sad).toFixed(1) + "%";
+
+</script>
+    <div class="next-btn-container">
+
+    <a href="confirm.html">
+
+        <button class="next-btn">
+            Next
+        </button>
+
+    </a>
+
+</div>
+
+</body>
+</html>
