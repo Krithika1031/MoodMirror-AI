@@ -26,6 +26,9 @@
         <p id="scan-status">
             Initializing Camera...
         </p>
+        <p class="server-note">
+    First scan may take a little longer while the AI server wakes up.
+</p>
 
         <h2 id="progress-text">
             0%
@@ -70,6 +73,7 @@ async function captureAndAnalyze(){
 
     progressText.innerHTML = "80%";
     scanStatus.innerHTML = "Analyzing Emotions...";
+    
 
     canvas.width = webcam.videoWidth;
     canvas.height = webcam.videoHeight;

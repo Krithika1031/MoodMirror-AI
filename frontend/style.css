@@ -1101,3 +1101,9 @@ button:hover{
     object-fit:cover;
     border-radius:20px;
 }
+.server-note {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    text-align: center;
+    margin: 8px 0;
+}
