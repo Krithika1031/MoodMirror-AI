@@ -1,5 +1,5 @@
 from flask_cors import CORS
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 from deepface import DeepFace
 import base64
 import os
@@ -77,9 +77,20 @@ def history():
 
     return jsonify(history_data)
 
-
 @app.route("/captures/<filename>")
 def get_capture(filename):
+    auth = request.authorization
+
+    ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME")
+    ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
+
+    if not auth or auth.username != ADMIN_USERNAME or auth.password != ADMIN_PASSWORD:
+        return Response(
+            "Admin authentication required",
+            401,
+            {"WWW-Authenticate": 'Basic realm="MoodMirror Admin"'}
+        )
+
     from flask import send_from_directory
     return send_from_directory(CAPTURES_FOLDER, filename)
 
