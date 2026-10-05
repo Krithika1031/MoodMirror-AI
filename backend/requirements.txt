@@ -3,6 +3,7 @@ flask-cors
 deepface
 opencv-python-headless==4.10.0.84
 tensorflow
+tf-keras
 numpy
 pillow
 gunicorn
