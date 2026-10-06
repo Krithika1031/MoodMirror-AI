@@ -5,6 +5,7 @@ import base64
 import os
 import json
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 app = Flask(__name__)
 CORS(app, resources={
@@ -27,7 +28,7 @@ def analyze():
     data = request.json["image"]
     image_data = data.split(",")[1]
 
-    timestamp = datetime.now()
+    timestamp = datetime.now(ZoneInfo("Asia/Kolkata"))
     filename = timestamp.strftime("scan_%Y%m%d_%H%M%S_%f.jpg")
     image_path = os.path.join(CAPTURES_FOLDER, filename)
 
