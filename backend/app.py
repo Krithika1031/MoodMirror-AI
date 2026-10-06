@@ -7,7 +7,14 @@ import json
 from datetime import datetime
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={
+    r"/*": {
+        "origins": [
+            "https://moodmirror-ai-frontend.onrender.com",
+            "http://localhost:5500"
+        ]
+    }
+})
 
 CAPTURES_FOLDER = "captures"
 HISTORY_FILE = "history.json"
